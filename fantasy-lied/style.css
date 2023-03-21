@@ -97,79 +97,6 @@ path.two {
   }
 }
 
-/* .castle {
- width: 100%;
- height: auto;
- position: absolute;
- border: 20px black solid;
- overflow: hidden;
-} */
-
-/* @keyframes slideshow{
-  0%{}
-  50%{}
-  100%{}
-}
-
-.slideshow-container{
-  width: 100%;
-  height: auto;
-  position: absolute;
-  overflow: hidden;
-  /* animation: slideshow 30s cubic-bezier(0.8,0,0,0.8) infinite; */
-/* }
-
-.slideshow-image {
-  max-width: 100%;
-  height: auto;
-  opacity: 1;
-  object-fit: contain;
-  /* transition: opacity 1s ease-in-out; */
-/* } */
-
-/* img{
-  max-width: 100%;
-  height: auto;
-  opacity: 1;
-  object-fit: contain;
-} */
-
-/*
-
-.slideshow-image:first-child {
-  opacity: 1;
-}
-
-.slideshow-image.active {
-  opacity: 1;
-}
-
-.slideshow-image.last-active {
-  opacity: 0;
-}
-
-/* Set the slideshow to auto-play */
-/* @keyframes slideshow {
-  0% {
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-} */
-/* 
-.slideshow-image {
-  animation: slideshow 18s linear infinite;
-} */
 @keyframes fader {
   0% {
     background: url("../mutual-images/background/castle.jpg");
@@ -205,7 +132,6 @@ path.two {
   width: 100%;
   height: auto;
   position: absolute;
-  top: 500px;
   overflow: hidden;
 }
 .slideshow-container {
@@ -214,13 +140,6 @@ path.two {
   overflow: hidden;
   width: 100%;
   animation: fader 30s cubic-bezier(0.4, 0, 0, 0.4) infinite;
-}
-
-.tester {
-  height: 200px;
-  width: 200px;
-  background-color: red;
-  border: thick green solid;
 }
 
 .wrapper {
