@@ -8,6 +8,9 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow: hidden;
+  font-family: "Merriweather", serif;
+  font-family: "Mukta", sans-serif;
 }
 
 #main {
@@ -21,7 +24,7 @@ body {
   width: 200vh;
   top: 50%;
   left: -100vh;
-  transform: translate(0, -50%);
+  transform: translate(0, -50%) rotate(100deg);
   position: absolute;
   border-radius: 50%;
   border: 2px solid #f1f1f1;
@@ -60,7 +63,9 @@ body {
 .secondhalf {
   width: 60%;
   height: 100%;
-  padding-left: 30px;
+  padding-left: 100px;
+  opacity: 0.5;
+  color: #be082d;
 }
 
 .firsthalf .dot {
@@ -81,4 +86,26 @@ body {
   font-size: 1vw;
   opacity: 0.5;
   font-weight: 500;
+}
+
+#panel {
+  position: absolute;
+  height: 30%;
+  width: 5%;
+  right: 3%;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.minicircle {
+  cursor: pointer;
+  opacity: 0.1;
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+  background-color: black;
 }
