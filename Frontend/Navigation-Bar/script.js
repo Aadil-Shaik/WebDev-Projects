@@ -1,116 +1,76 @@
 const timeline = gsap.timeline({ defaults: { duration: 1, delay: 1 } });
 
-//$('.tlt').textillate({ in: { effect: 'rollIn' } });
-// gsap.from("#fourthh1", {
+// .from("#fifthh1", {
+//   opacity: 0,
 //   onStart: function () {
-//     $("#fourthh1").textillate({
+//     $("#fifthh1").textillate({
 //       in: {
-//         effect: "fadeInUp",
+//         effect: "fadeIn",
+//         sync: true,
+
 //         callback: function () {
-//           $("#fourthh1").textillate("out");
+//           $("#fifthh1").textillate("out");
 //         },
 //       },
-//       out: { effect: "fadeOutUp" },
+//       out: { delay: 2000, effect: "fadeOut", sync: true },
 //     });
 //   },
-// });
+// })
 
 timeline
   .from("#fourthh1", {
     opacity: 0,
-    delay: 0,
-    onStart: function () {
-      $("#fourthh1").textillate({
-        in: {
-          effect: "fadeInUp",
-          sync: true,
-          callback: function () {
-            $("#fourthh1").textillate("out");
-          },
-        },
-        out: { delay: 1000, effect: "fadeOutUp", sync: true },
-      });
-    },
+    y: "50%",
+  })
+  .to("#fourthh1", {
+    opacity: 0,
+    y: "-50%",
   })
   .from("#thirdh1", {
     opacity: 0,
-    onStart: function () {
-      $("#thirdh1").textillate({
-        in: {
-          effect: "fadeInUp",
-          sync: true,
-          callback: function () {
-            $("#thirdh1").textillate("out");
-          },
-        },
-        out: { delay: 1000, effect: "fadeOutUp", sync: true },
-      });
-    },
+    y: "50%",
+    delay: "-1",
+  })
+  .to("#thirdh1", {
+    opacity: 0,
+    y: "-50%",
   })
   .from("#secondh1", {
     opacity: 0,
-    onStart: function () {
-      $("#secondh1").textillate({
-        in: {
-          effect: "fadeInUp",
-          sync: true,
-          callback: function () {
-            $("#secondh1").textillate("out");
-          },
-        },
-        out: { delay: 1000, effect: "fadeOutUp", sync: true },
-      });
-    },
+    y: "50%",
+    delay: "-1",
+  })
+  .to("#secondh1", {
+    opacity: 0,
+    y: "-50%",
   })
   .from("#firsth1", {
     opacity: 0,
-    onStart: function () {
-      $("#firsth1").textillate({
-        in: {
-          effect: "fadeInUp",
-          sync: true,
-          callback: function () {
-            $("#firsth1").textillate("out");
-          },
-        },
-        out: { delay: 1000, effect: "fadeOutUp", sync: true },
-      });
-    },
+    y: "50%",
+    delay: "-1",
+  })
+  .to("#firsth1", {
+    opacity: 0,
+    y: "-50%",
   })
   .from("#fifthh1", {
+    delay: "-1",
     opacity: 0,
-    onStart: function () {
-      $("#fifthh1").textillate({
-        in: {
-          effect: "fadeIn",
-          sync: true,
-
-          callback: function () {
-            $("#fifthh1").textillate("out");
-          },
-        },
-        out: { delay: 2000, effect: "fadeOut", sync: true },
-      });
-    },
   })
   .from("#sixthh1", {
     opacity: 0,
-    onStart: function () {
-      $("#sixthh1").textillate({
-        in: {
-          effect: "fadeIn",
-          sync: true,
-          callback: function () {
-            $("#sixthh1").textillate("out");
-          },
-        },
-        out: { delay: 2000, effect: "fadeOut", sync: true },
-      });
-    },
+  })
+  .to("#fifthh1", {
+    delay: 0,
+    opacity: 0,
+  })
+  .to("#sixthh1", {
+    delay: 2,
+    opacity: 0,
   })
   .from("#circle", {
+    delay: 0,
     opacity: 0,
-    delay: 3,
   })
   .to("#circle", {
     ease: Back.easeOut.config(1.7),
@@ -119,6 +79,7 @@ timeline
   })
   .to("#panel", {
     right: "3%",
+    delay: "0.5",
     duration: 0.9,
   });
 
