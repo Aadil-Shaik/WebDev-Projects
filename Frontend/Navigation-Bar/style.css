@@ -80,16 +80,18 @@ body {
   top: 50%;
   position: absolute;
   transform: translate(0, -50%);
-  background-color: #be082d;
+  background-color: #ff0000;
 }
 
 .secondhalf h4 {
   font-size: 2vw;
   font-weight: 400;
+  color: #ff0000;
 }
 .secondhalf h6 {
   font-size: 1vw;
   font-weight: 300;
+  color: #ff0000;
 }
 
 #panel {
@@ -108,7 +110,7 @@ body {
 
 .minicircle {
   cursor: pointer;
-  opacity: 0.3;
+  opacity: 0.2;
   width: 1vw;
   height: 1vw;
   border-radius: 50%;
