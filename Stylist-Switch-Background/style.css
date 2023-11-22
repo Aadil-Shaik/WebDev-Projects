@@ -107,7 +107,7 @@ html,body{
     font-family: "kajiro";
     color: white;
     font-weight: 100;
-    font-size: 11vw;
+    font-size: 7vw;
     position: absolute;
     top:100%;
     left: 0;
@@ -120,8 +120,8 @@ html,body{
 .hero-left button{
     pointer-events: all;
     cursor: pointer;
-    padding: .8vw 3vw;
-    font-size: 3vw;
+    padding: .5vw 2vw;
+    font-size: 2vw;
     margin-top: 2vw;
     font-family: "kajiro";
 }
