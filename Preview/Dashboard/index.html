@@ -1108,6 +1108,12 @@
     <div class="mobile-header" id="mobileHeader">
         <button class="sidebar-toggle" id="mobileToggle">
             <i class="fas fa-bars"></i>
+<body>
+<div class="dashboard-container">
+    <!-- Mobile Header -->
+    <div class="mobile-header" id="mobileHeader">
+        <button class="sidebar-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
         </button>
         <div class="logo">
             <i class="fas fa-chart-line"></i>
@@ -1269,7 +1275,7 @@
                             <div class="legend-item">
                                 <span class="legend-color" style="background-color: #4285f4;"></span>
                                 <span class="legend-value">10</span>
-                                <span>Phone Outreach</span>
+                                <span>Phone</span>
                             </div>
                             <div class="legend-item">
                                 <span class="legend-color" style="background-color: #ea4335;"></span>
@@ -1279,7 +1285,7 @@
                             <div class="legend-item">
                                 <span class="legend-color" style="background-color: #fbbc04;"></span>
                                 <span class="legend-value">11</span>
-                                <span>Email Campaign</span>
+                                <span>Email</span>
                             </div>
                             <div class="legend-item">
                                 <span class="legend-color" style="background-color: #34a853;"></span>
@@ -1691,8 +1697,11 @@
             this.generateCalendar();
             this.updateTasksDue();
             this.updateMobileHeader();
-            this.animateCharts();
             this.updatePieChart();
+            // Call animateCharts after DOM is ready
+            setTimeout(() => {
+                this.animateCharts();
+            }, 100);
         }
         
         setupEventListeners() {
@@ -1838,7 +1847,9 @@
                     break;
                 case 'dashboard':
                     this.updateDashboardStats();
-                    this.animateCharts();
+                    setTimeout(() => {
+                        this.animateCharts();
+                    }, 100);
                     break;
                 default:
                     break;
@@ -1943,10 +1954,6 @@
                 if (this.currentYear === today.getFullYear() && 
                     this.currentMonth === today.getMonth() && 
                     day === today.getDate()) {
-                    dayElement.classList.add('today');
-                }
-                
-                cal  {
                     dayElement.classList.add('today');
                 }
                 
