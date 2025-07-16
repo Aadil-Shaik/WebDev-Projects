@@ -3,258 +3,631 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI & Quantum Convergence Summit</title>
-    <!-- Tailwind CSS CDN -->
+    <title>AI Quantum Nexus - Charting the Future of Intelligent Systems</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light gray background */
-            color: #334155; /* Dark slate gray text */
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
         }
-        .section-heading {
-            @apply text-4xl font-bold text-center mb-12 text-gray-800;
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .card {
-            @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+
+        .quantum-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 25%, #7c3aed 50%, #c026d3 75%, #e11d48 100%);
         }
-        .gradient-button {
-            background: linear-gradient(to right, #6366f1, #8b5cf6);
-            @apply text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 20px rgba(102, 126, 234, 0.4); }
+            to { box-shadow: 0 0 40px rgba(102, 126, 234, 0.8); }
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #667eea;
+            border-radius: 50%;
+            animation: particle-float 8s linear infinite;
+        }
+
+        @keyframes particle-float {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+        }
+
+        /* Falling Elements Footer Styles */
+        .falling-elements-footer {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .svg-shape {
+            position: absolute;
+            animation: float-rotate 20s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes float-rotate {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-20px) rotate(360deg); }
+        }
+
+        .ctas-wrapper {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: gentle-float 8s ease-in-out infinite;
+        }
+
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        .ctas {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 0;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ctas:last-child {
+            border-bottom: none;
+        }
+
+        .ctas:hover {
+            color: #667eea;
+            transform: translateX(5px);
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .quantum-circuit {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(90deg, rgba(102, 126, 234, 0.1) 1px, transparent 1px),
+                linear-gradient(rgba(102, 126, 234, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: circuit-flow 10s linear infinite;
+        }
+
+        @keyframes circuit-flow {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .countdown-digit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-xl font-bold gradient-text">AI Quantum Nexus</div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#speakers" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Speakers</a>
+                        <a href="#agenda" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Agenda</a>
+                        <a href="#sponsors" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Sponsors</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="glass-effect px-4 py-2 rounded-lg text-sm font-medium hover:bg-white hover:bg-opacity-10 transition-all">
+                        Register Now
+                    </button>
+                    <button class="quantum-gradient px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 transition-all">
+                        Become Speaker
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden fixed top-16 right-0 w-64 h-full glass-effect">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">About</a>
+                <a href="#speakers" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Speakers</a>
+                <a href="#agenda" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Agenda</a>
+                <a href="#sponsors" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white">Sponsors</a>
+                <div class="pt-4 space-y-2">
+                    <button class="w-full glass-effect px-4 py-2 rounded-lg text-sm font-medium">Register Now</button>
+                    <button class="w-full quantum-gradient px-4 py-2 rounded-lg text-sm font-medium">Become Speaker</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <header class="relative bg-gradient-to-r from-blue-700 to-purple-600 text-white py-24 md:py-32 overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://placehold.co/1920x1080/0f172a/e2e8f0?text=AI+%26+Quantum+Visuals');"></div>
-        <div class="container mx-auto px-4 relative z-10 text-center">
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-md">
-                Unlocking Tomorrow: <br class="hidden md:block"> AI & Quantum Convergence Summit
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 font-light max-w-3xl mx-auto opacity-90">
-                Explore the revolutionary intersection of Artificial Intelligence and Quantum Computing.
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="quantum-circuit"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+        
+        <div class="relative z-10 text-center max-w-6xl mx-auto px-4">
+            <div class="floating-animation">
+                <h1 class="text-6xl md:text-8xl font-black mb-6">
+                    <span class="gradient-text">AI</span>
+                    <span class="text-white mx-4">×</span>
+                    <span class="gradient-text">Quantum</span>
+                </h1>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-8">NEXUS</h2>
+            </div>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Charting the Future of Intelligent Systems
             </p>
-            <div class="text-lg md:text-xl font-medium mb-10">
-                <span class="block md:inline-block mr-0 md:mr-6 mb-2 md:mb-0">🗓️ July 25, 2025</span>
-                <span class="block md:inline-block">📍 Bengaluru, India</span>
-            </div>
-            <a href="#registration" class="gradient-button">
-                Register Now
-            </a>
-        </div>
-    </header>
-
-    <!-- About the Event Section -->
-    <section id="about" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-heading">About the Event</h2>
-            <div class="max-w-4xl mx-auto text-lg leading-relaxed text-gray-700 text-center">
-                <p class="mb-6">
-                    This summit is a unique opportunity to delve into the transformative world where Artificial Intelligence meets Quantum Computing. Designed for tech enthusiasts, researchers, developers, and business leaders, our event offers a comprehensive look at foundational concepts, hands-on experiences, and critical debates shaping the future.
-                </p>
-                <p>
-                    Gain insights into the latest advancements, understand the ethical implications, and network with leading minds in the field. Don't miss this chance to be at the forefront of innovation!
-                </p>
-            </div>
-        </div>
-    </section>
- 
-
-    <!-- Speakers Section (Placeholder) -->
-    <section id="speakers" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-heading">Our Esteemed Speakers</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <!-- Speaker Card 1 -->
-                <div class="card text-center">
-                    <img src="https://placehold.co/150x150/cbd5e1/475569?text=Speaker+1" alt="Speaker 1" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-md">
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Anya Sharma</h3>
-                    <p class="text-blue-600 font-medium mb-3">Quantum AI Researcher, TechCorp</p>
-                    <p class="text-gray-600 text-sm">Specializing in quantum machine learning algorithms and their applications in complex data analysis.</p>
-                </div>
-                <!-- Speaker Card 2 -->
-                <div class="card text-center">
-                    <img src="https://placehold.co/150x150/cbd5e1/475569?text=Speaker+2" alt="Speaker 2" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-md">
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">Prof. Rajeev Kumar</h3>
-                    <p class="text-blue-600 font-medium mb-3">Head of AI Ethics, Global University</p>
-                    <p class="text-gray-600 text-sm">An expert in ethical AI development and governance frameworks for emerging technologies.</p>
-                </div>
-                <!-- Speaker Card 3 -->
-                <div class="card text-center">
-                    <img src="https://placehold.co/150x150/cbd5e1/475569?text=Speaker+3" alt="Speaker 3" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-md">
-                    <h3 class="text-xl font-bold text-gray-900 mb-1">Ms. Lena Petrova</h3>
-                    <p class="text-blue-600 font-medium mb-3">Quantum Software Engineer, Qubit Solutions</p>
-                    <p class="text-gray-600 text-sm">Pioneering practical applications of quantum computing in various industries.</p>
-                </div>
-            </div>
-            <p class="text-center text-gray-600 mt-10">More speakers to be announced soon!</p>
-        </div>
-    </section>
-
-    <!-- Registration Section -->
-    <section id="registration" class="py-16 md:py-24 bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-center">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-6">Secure Your Spot Today!</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                Don't miss out on this unparalleled opportunity to explore the future of technology. Limited seats available!
+            
+            <p class="text-lg text-gray-400 mb-12 max-w-3xl mx-auto">
+                Unlocking Tomorrow: Demystifying AI Quantum and Building Responsible Futures. 
+                A Strategic Imperative for Abu Dhabi's AI Vision.
             </p>
-            <div class="bg-white text-gray-800 p-8 rounded-xl shadow-lg inline-block text-left max-w-md w-full">
-                <h3 class="text-2xl font-bold mb-4">Registration Details</h3>
-                <ul class="list-disc list-inside text-lg space-y-2 mb-6">
-                    <li><strong>Standard Pass:</strong> ₹2,500 (Includes all sessions, lab access, networking)</li>
-                    <li><strong>Student Pass:</strong> ₹1,500 (Valid student ID required)</li>
-                </ul>
-                <p class="text-gray-700 mb-6">
-                    Your registration includes access to all insightful sessions, hands-on lab materials, and valuable networking opportunities.
-                </p>
-                <a href="#" class="gradient-button bg-blue-600 hover:bg-blue-700 block w-full text-center py-4 rounded-lg text-white text-xl">
-                    Register Now
-                </a>
-                <p class="text-sm text-gray-600 mt-4">For group discounts or corporate registrations, please contact us.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                <button class="quantum-gradient px-8 py-4 rounded-full text-lg font-semibold hover:opacity-90 transition-all pulse-glow">
+                    Register for Event
+                </button>
+                <button class="glass-effect px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:bg-opacity-10 transition-all">
+                    Become a Sponsor
+                </button>
             </div>
-        </div>
-    </section>
-
-    <!-- Venue Section -->
-    <section id="venue" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-heading">Venue & Location</h2>
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-lg leading-relaxed text-gray-700 mb-8">
-                    The summit will be held at a state-of-the-art facility in the heart of Bengaluru, providing a comfortable and conducive environment for learning and networking.
-                </p>
-                <div class="card p-0 overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Innovation Hub, Bengaluru</h3>
-                        <p class="text-gray-700 mb-4">
-                            123 Tech Park Road, Silicon Valley Layout, <br>
-                            Bengaluru, Karnataka 560001, India
-                        </p>
-                        <p class="text-gray-600 text-sm">
-                            Easily accessible by public transport and ample parking available.
-                        </p>
+            
+            <!-- Event Details -->
+            <div class="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold gradient-text mb-2">August 11</div>
+                        <div class="text-gray-400">2025</div>
                     </div>
-                    <!-- Placeholder for Google Map -->
-                    <div class="w-full h-80 bg-gray-300 flex items-center justify-center text-gray-600 text-lg">
-                        <img src="https://placehold.co/600x400/e0e7ff/4338ca?text=Map+Placeholder" alt="Map Placeholder" class="w-full h-full object-cover">
+                    <div>
+                        <div class="text-3xl font-bold gradient-text mb-2">Abu Dhabi</div>
+                        <div class="text-gray-400">UAE</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold gradient-text mb-2">500+</div>
+                        <div class="text-gray-400">Attendees</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Attend Section -->
-    <section id="why-attend" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="section-heading">Why You Should Attend</h2>
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                        <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Cutting-Edge Knowledge
-                    </h3>
-                    <p class="text-gray-600">Gain a deep understanding of the latest advancements and future trends in AI and Quantum Computing from industry leaders.</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold gradient-text mb-6">About the Event</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Join us as we explore the convergence of Artificial Intelligence and Quantum Computing, 
+                    fostering ethical innovation and talent development in the UAE.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="feature-card glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-xl font-semibold mb-3 gradient-text">Beginner-Friendly</h3>
+                    <p class="text-gray-400">AI & Quantum sessions designed for all skill levels</p>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                        <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        Hands-on Experience
-                    </h3>
-                    <p class="text-gray-600">Participate in a unique hands-on quantum lab session to get practical exposure to quantum programming tools.</p>
+                
+                <div class="feature-card glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-3 gradient-text">Expert Debates</h3>
+                    <p class="text-gray-400">Hype vs. Reality discussions with industry leaders</p>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                        <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                        Engaging Debates
-                    </h3>
-                    <p class="text-gray-600">Join a thought-provoking debate on the convergence of Quantum and AI, distinguishing between hype and reality.</p>
+                
+                <div class="feature-card glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-3 gradient-text">Interactive Quiz</h3>
+                    <p class="text-gray-400">Engaging AI Quantum knowledge challenges</p>
                 </div>
-                <div class="card">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
-                        <svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a3 3 0 015.356-1.857M17 20v-2c0-.653-.146-1.28-.423-1.857M9 20v-2c0-.653-.146-1.28-.423-1.857M12 12a3 3 0 100-6 3 3 0 000 6zm-3 9a3 3 0 100-6 3 3 0 000 6zm6 0a3 3 0 100-6 3 3 0 000 6z"></path></svg>
-                        Networking Opportunities
-                    </h3>
-                    <p class="text-gray-600">Connect with fellow professionals, researchers, and potential collaborators in a vibrant environment.</p>
+                
+                <div class="feature-card glass-effect rounded-xl p-6">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-semibold mb-3 gradient-text">AI Governance</h3>
+                    <p class="text-gray-400">Focus on ethics and responsible AI development</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQs Section -->
-    <section id="faq" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="section-heading">Frequently Asked Questions</h2>
-            <div class="max-w-3xl mx-auto space-y-6">
-                <!-- FAQ Item 1 -->
-                <div class="card">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Is prior experience in quantum computing or AI required?</h3>
-                    <p class="text-gray-600">No, the event is designed to cater to various levels of understanding. While some basic coding knowledge might be helpful for the hands-on lab, it's not strictly essential for general understanding of the sessions.</p>
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold gradient-text mb-6">Featured Speakers</h2>
+                <p class="text-xl text-gray-300">Learn from the brightest minds in AI and Quantum Computing</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-xl p-6 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold mb-2">Dr. Sarah Chen</h3>
+                    <p class="text-gray-400 mb-3">Quantum Computing Researcher</p>
+                    <p class="text-sm text-gray-500">MIT Quantum Lab</p>
                 </div>
-                <!-- FAQ Item 2 -->
-                <div class="card">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">What should I bring for the hands-on lab?</h3>
-                    <p class="text-gray-600">Please bring your own laptop to participate actively in the hands-on quantum lab session.</p>
+                
+                <div class="glass-effect rounded-xl p-6 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold mb-2">Prof. Ahmed Al-Rashid</h3>
+                    <p class="text-gray-400 mb-3">AI Ethics Specialist</p>
+                    <p class="text-sm text-gray-500">ADNOC AI Institute</p>
                 </div>
-                <!-- FAQ Item 3 -->
-                <div class="card">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Will recordings of the sessions be available?</h3>
-                    <p class="text-gray-600">We are planning to make session recordings available to registered attendees post-event. Details will be shared closer to the event date.</p>
+                
+                <div class="glass-effect rounded-xl p-6 text-center">
+                    <div class="w-24 h-24 bg-gradient-to-r from-green-400 to-blue-400 rounded-full mx-auto mb-4"></div>
+                    <h3 class="text-xl font-semibold mb-2">Maria Rodriguez</h3>
+                    <p class="text-gray-400 mb-3">Quantum AI Pioneer</p>
+                    <p class="text-sm text-gray-500">Google Quantum AI</p>
                 </div>
-                <!-- FAQ Item 4 -->
-                <div class="card">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Will there be a certificate of attendance?</h3>
-                    <p class="text-gray-600">Yes, all registered attendees who complete the summit will receive a digital certificate of participation.</p>
-                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="quantum-gradient px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-all">
+                    Become a Speaker
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-gradient-to-r from-blue-700 to-purple-600 text-white text-center">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-                Have questions about the summit? We're here to help!
-            </p>
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
-                <div class="text-center">
-                    <p class="text-2xl font-semibold mb-2">Email Us</p>
-                    <a href="mailto:info@aiquantumsummit.com" class="text-blue-200 hover:underline text-lg">info@aiquantumsummit.com</a>
+    <!-- Agenda Section -->
+    <section id="agenda" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold gradient-text mb-6">Event Agenda</h2>
+                <p class="text-xl text-gray-300">A full day of learning, networking, and innovation</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="glass-effect rounded-xl p-6 flex items-center">
+                    <div class="text-2xl font-bold gradient-text w-20">09:00</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold mb-2">Registration & Welcome Coffee</h3>
+                        <p class="text-gray-400">Network with fellow attendees and grab some refreshments</p>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <p class="text-2xl font-semibold mb-2">Call Us</p>
-                    <p class="text-lg">+91 98765 43210</p>
+                
+                <div class="glass-effect rounded-xl p-6 flex items-center">
+                    <div class="text-2xl font-bold gradient-text w-20">10:00</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold mb-2">Opening Keynote: The Quantum AI Revolution</h3>
+                        <p class="text-gray-400">Understanding the convergence of quantum computing and artificial intelligence</p>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <p class="text-2xl font-semibold mb-2">Follow Us</p>
-                    <div class="flex justify-center space-x-4 mt-2">
-                        <a href="#" class="text-blue-200 hover:text-white transition-colors duration-200">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.865-.013-1.7C6.737 18.25 6.162 17.26 6.162 17.26c-.436-1.106-.9-1.397-.9-1.397-.724-.49.056-.48.056-.48 1.008.07 1.532 1.03 1.532 1.03.89 1.529 2.342 1.085 2.91.828.09-.643.35-1.085.636-1.334-2.22-.253-4.555-1.113-4.555-4.949 0-1.092.39-1.988 1.03-2.687-.104-.253-.448-1.272.097-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.7.11 2.5.323 1.908-1.296 2.747-1.026 2.747-1.026.546 1.378.202 2.397.097 2.65.64.699 1.03 1.595 1.03 2.687 0 3.843-2.339 4.695-4.566 4.942.359.307.678.915.678 1.846 0 1.335-.012 2.41-.012 2.727 0 .268.18.579.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.523 2 12 2Z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                        <!-- Add more social media icons if needed, e.g., LinkedIn, Twitter/X -->
+                
+                <div class="glass-effect rounded-xl p-6 flex items-center">
+                    <div class="text-2xl font-bold gradient-text w-20">11:30</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold mb-2">Panel: Hype vs Reality in Quantum AI</h3>
+                        <p class="text-gray-400">Expert debate on current capabilities and future potential</p>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 flex items-center">
+                    <div class="text-2xl font-bold gradient-text w-20">13:00</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold mb-2">Networking Lunch</h3>
+                        <p class="text-gray-400">Connect with speakers, sponsors, and fellow attendees</p>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 flex items-center">
+                    <div class="text-2xl font-bold gradient-text w-20">14:30</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold mb-2">Interactive AI Quantum Quiz</h3>
+                        <p class="text-gray-400">Test your knowledge and win exciting prizes</p>
+                    </div>
+                </div>
+                
+                <div class="glass-effect rounded-xl p-6 flex items-center">
+                    <div class="text-2xl font-bold gradient-text w-20">16:00</div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold mb-2">AI Governance & Ethics Workshop</h3>
+                        <p class="text-gray-400">Building responsible AI systems for the future</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 text-center">
-        <div class="container mx-auto px-4">
-            <p>&copy; 2025 AI & Quantum Convergence Summit. All rights reserved.</p>
-            <div class="mt-4 text-sm">
-                <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
-                <span class="text-gray-500">|</span>
-                <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold gradient-text mb-6">Our Partners</h2>
+                <p class="text-xl text-gray-300">Supporting the future of AI in Abu Dhabi</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="glass-effect rounded-xl p-6 h-24 flex items-center justify-center">
+                    <span class="text-gray-400 font-semibold">Partner 1</span>
+                </div>
+                <div class="glass-effect rounded-xl p-6 h-24 flex items-center justify-center">
+                    <span class="text-gray-400 font-semibold">Partner 2</span>
+                </div>
+                <div class="glass-effect rounded-xl p-6 h-24 flex items-center justify-center">
+                    <span class="text-gray-400 font-semibold">Partner 3</span>
+                </div>
+                <div class="glass-effect rounded-xl p-6 h-24 flex items-center justify-center">
+                    <span class="text-gray-400 font-semibold">Partner 4</span>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="quantum-gradient px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-all">
+                    Become a Sponsor
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Falling Elements Footer -->
+    <footer class="falling-elements-footer">
+        <!-- Animated SVG Shapes -->
+        <div class="svg-shape" style="width: 280px; height: 280px; transform: translate(100px, 200px) rotate(45deg);">
+            <svg width="308" height="308" viewBox="0 0 277 301">
+                <path d="M108.103 8.24078C126.954 -2.64276 150.179 -2.64276 169.03 8.24078L246.169 52.7773C265.02 63.6609 276.633 83.7745 276.633 105.542V194.615C276.633 216.382 265.02 236.495 246.169 247.379L169.03 291.915C150.179 302.799 126.954 302.799 108.103 291.915L30.9635 247.379C12.1126 236.495 0.5 216.382 0.5 194.615V105.542C0.5 83.7745 12.1126 63.6609 30.9635 52.7773L108.103 8.24078Z" fill="#FAFF00" opacity="0.6"></path>
+            </svg>
+        </div>
+        
+        <div class="svg-shape" style="width: 280px; height: 280px; transform: translate(400px, 100px) rotate(90deg);">
+            <svg width="308" height="308" viewBox="0 0 207 207">
+                <path d="M176.3,31c-18.8-18.8-44.7-30.4-73.3-30.4C74.3,0.6,48.3,12.2,29.6,31S-0.8,75.7-0.8,104.3 c0,28.6,11.6,54.6,30.4,73.3S74.3,208,102.9,208c28.6,0,54.6-11.6,73.3-30.4s30.4-44.7,30.4-73.3C206.6,75.7,195,49.7,176.3,31z" fill="#8F9AFF" opacity="0.6"></path>
+            </svg>
+        </div>
+        
+        <div class="svg-shape" style="width: 280px; height: 280px; transform: translate(700px, 300px) rotate(135deg);">
+            <svg width="308" height="308" viewBox="0 0 282 281">
+                <path d="M75.9469 280.078C91.5033 280.078 105.96 275.398 117.97 267.376C130.585 258.951 151.308 258.951 163.924 267.376C175.934 275.398 190.39 280.078 205.947 280.078C247.615 280.078 281.394 246.499 281.394 205.078C281.394 189.768 276.779 175.529 268.856 163.661C260.282 150.817 260.282 129.339 268.856 116.496C276.779 104.628 281.394 90.3887 281.394 75.0781C281.394 33.6568 247.615 0.078125 205.947 0.078125C190.39 0.078125 175.934 4.75843 163.924 12.7798C151.308 21.2056 130.585 21.2056 117.97 12.7798C105.96 4.75843 91.5033 0.078125 75.9469 0.078125C34.2787 0.078125 0.5 33.6568 0.5 75.0781C0.5 90.3887 5.11505 104.628 13.0377 116.496C21.6119 129.339 21.6119 150.817 13.0377 163.661C5.11505 175.529 0.5 189.768 0.5 205.078C0.5 246.499 34.2787 280.078 75.9469 280.078Z" fill="#FF8E59" opacity="0.6"></path>
+            </svg>
+        </div>
+        
+        <div class="svg-shape" style="width: 280px; height: 280px; transform: translate(200px, 400px) rotate(180deg);">
+            <svg width="308" height="308" viewBox="0 0 249 247">
+                <path d="M245.7,56.1l0-9.9c0-22.7-18.4-41-41-41l-160.2,0c-22.7,0-41,18.4-41,41l0,9.9c0,11,4.3,21,11.4,28.4	c1.5,1.5,1.5,4,0,5.5c-7.1,7.4-11.4,17.4-11.4,28.4l0,9.9c0,11,4.3,21,11.4,28.4c1.5,1.5,1.5,4,0,5.5c-7.1,7.4-11.4,17.4-11.4,28.4	l0,10.1c0,22.7,18.4,41,41,41l160.2,0c22.7,0,41-18.4,41-41l0-10.1c0-11-4.3-21-11.4-28.4c-1.5-1.5-1.5-4,0-5.5	c7.1-7.4,11.4-17.4,11.4-28.4l0-9.9c0-11-4.3-21-11.4-28.4c-1.5-1.5-1.5-4,0-5.5C241.3,77.1,245.7,67.1,245.7,56.1z" fill="#FFBDF9" opacity="0.6"></path>
+            </svg>
+        </div>
+        
+        <div class="svg-shape" style="width: 280px; height: 280px; transform: translate(500px, 450px) rotate(225deg);">
+            <svg width="308" height="308" viewBox="0 0 282 281">
+                <path d="M75.9469 280.078C91.5033 280.078 105.96 275.398 117.97 267.376C130.585 258.951 151.308 258.951 163.924 267.376C175.934 275.398 190.39 280.078 205.947 280.078C247.615 280.078 281.394 246.499 281.394 205.078C281.394 189.768 276.779 175.529 268.856 163.661C260.282 150.817 260.282 129.339 268.856 116.496C276.779 104.628 281.394 90.3887 281.394 75.0781C281.394 33.6568 247.615 0.078125 205.947 0.078125C190.39 0.078125 175.934 4.75843 163.924 12.7798C151.308 21.2056 130.585 21.2056 117.97 12.7798C105.96 4.75843 91.5033 0.078125 75.9469 0.078125C34.2787 0.078125 0.5 33.6568 0.5 75.0781C0.5 90.3887 5.11505 104.628 13.0377 116.496C21.6119 129.339 21.6119 150.817 13.0377 163.661C5.11505 175.529 0.5 189.768 0.5 205.078C0.5 246.499 34.2787 280.078 75.9469 280.078Z" fill="#DAEF68" opacity="0.6"></path>
+            </svg>
+        </div>
+        
+        <!-- CTA Wrappers -->
+        <div class="ctas-wrapper" style="width: 280px; height: auto; transform: translate(150px, 150px) rotate(-5deg);">
+            <a class="ctas" href="#register">Register for the Event</a>
+            <a class="ctas" href="#register">Secure your spot today</a>
+        </div>
+        
+        <div class="ctas-wrapper" style="width: 280px; height: auto; transform: translate(450px, 80px) rotate(3deg);">
+            <a class="ctas" href="#speakers">Become a Speaker</a>
+            <a class="ctas" href="#speakers">Share your expertise</a>
+        </div>
+        
+        <div class="ctas-wrapper" style="width: 280px; height: auto; transform: translate(750px, 200px) rotate(-2deg);">
+            <a class="ctas" href="#sponsors">Become a Sponsor</a>
+            <a class="ctas" href="#sponsors">Partner with innovation</a>
+        </div>
+        
+        <div class="ctas-wrapper" style="width: 280px; height: auto; transform: translate(300px, 350px) rotate(4deg);">
+            <a class="ctas" href="#newsletter">Join our Newsletter</a>
+            <a class="ctas" href="#newsletter">Stay updated</a>
+        </div>
+        
+        <div class="ctas-wrapper" style="width: 280px; height: auto; transform: translate(600px, 400px) rotate(-3deg);">
+            <a class="ctas" href="#community">Join our Community</a>
+            <a class="ctas" href="#community">Connect with peers</a>
+        </div>
+        
+        <!-- Footer Content -->
+        <div class="absolute bottom-0 left-0 right-0 p-8 text-center z-10">
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-3xl font-bold gradient-text mb-4">Ready to Shape the Future?</h3>
+                <p class="text-gray-300 mb-6">Join us at AI Quantum Nexus and be part of the revolution</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="quantum-gradient px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-all">
+                        Register Now
+                    </button>
+                    <button class="glass-effect px-8 py-3 rounded-full font-semibold hover:bg-white hover:bg-opacity-10 transition-all">
+                        Learn More
+                    </button>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <p class="text-gray-400 text-sm">© 2025 AI Quantum Nexus. Organized by UAE AI Advocates GDG Chapter.</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.remove('active');
+            });
+        });
+
+        // Create floating particles
+        function createParticles() {
+            const container = document.getElementById('hero-particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 5) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Initialize particles
+        createParticles();
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.05)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
